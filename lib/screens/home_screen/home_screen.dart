@@ -5,6 +5,7 @@ import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/widgets/svg_image.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:ptc_quiz2/screens/home_screen/widgets/build_offers_list.dart';
 
 import 'widgets/build_sliver_app_bar.dart';
 
@@ -13,14 +14,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pattern = RegExp(r'\d{1,2} % \s*OFF');
-
-    final offers = <String>[
-      'Get 50 % OFF on first 5 orders',
-      'Get 30 % OFF on first 3 orders',
-      'Get 10 % OFF on first 1 orders',
-    ];
-    print(offers.map((e) => e.split(pattern)));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.deepBlue,
@@ -52,6 +45,7 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           buildSliverAppBar(),
+          buildOffersList(),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: 50,

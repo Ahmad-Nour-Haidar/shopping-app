@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -28,16 +27,17 @@ SliverAppBar buildSliverAppBar() {
     backgroundColor: AppColor.deepBlue,
     // pinned: true,
     floating: true,
-    expandedHeight: 200.0,
+    expandedHeight: 160.0,
     flexibleSpace: FlexibleSpaceBar(
       titlePadding: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 10,
       ),
       background: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
+            const Gap(16),
             TextFormField(
               decoration: const InputDecoration(
                 hintText: 'Search Products or store',

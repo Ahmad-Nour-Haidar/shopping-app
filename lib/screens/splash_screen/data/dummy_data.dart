@@ -15,7 +15,8 @@ const pageViewItem = <OnboardingItem>[
     subTitle: "Get your purchases delivered quickly and reliably, every time.",
   ),
   OnboardingItem(
-    title: "Experience the convenience of shopping from anywhere, at any time. 🛍️",
+    title:
+        "Experience the convenience of shopping from anywhere, at any time. 🛍️",
     subTitle: "Shop easily no matter where you are, day or night.",
   ),
   OnboardingItem(

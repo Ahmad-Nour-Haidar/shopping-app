@@ -1,4 +1,4 @@
-import 'dart:math' show min, max;
+import 'dart:math' show min, max, Random;
 
 import 'package:flutter/material.dart';
 
@@ -35,6 +35,17 @@ MaterialColor _generateMaterialColor(Color color) {
 }
 
 abstract final class ColorHelper {
+  static final _random = Random();
+
   static MaterialColor toMaterialColor(Color color) =>
       _generateMaterialColor(color);
+
+  static Color randomColor() {
+    return Color.fromARGB(
+      255,
+      _random.nextInt(256),
+      _random.nextInt(256),
+      _random.nextInt(256),
+    );
+  }
 }

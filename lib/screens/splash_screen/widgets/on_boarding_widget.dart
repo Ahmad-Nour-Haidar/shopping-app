@@ -6,7 +6,10 @@ import '../../../core/theme/app_text_style.dart';
 import '../model/onboarding_item.dart';
 
 class OnBoardingWidget extends StatelessWidget {
-  const OnBoardingWidget({super.key, required this.item,});
+  const OnBoardingWidget({
+    super.key,
+    required this.item,
+  });
 
   final OnboardingItem item;
 
