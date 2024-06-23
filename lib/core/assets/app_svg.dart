@@ -1,5 +1,6 @@
 abstract final class AppSvg {
   static const _path = 'assets/svgs';
+  static const arrowLeft = '$_path/arrow-left.svg';
   static const cart = '$_path/cart.svg';
   static const check = '$_path/check.svg';
   static const circleAdd = '$_path/circle-add.svg';

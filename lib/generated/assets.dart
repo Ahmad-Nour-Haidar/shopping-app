@@ -9,6 +9,7 @@ class Assets {
   static const String fontsManropeMedium = 'assets/fonts/Manrope-Medium.ttf';
   static const String fontsManropeRegular = 'assets/fonts/Manrope-Regular.ttf';
   static const String fontsManropeSemiBold = 'assets/fonts/Manrope-SemiBold.ttf';
+  static const String svgsArrowLeft = 'assets/svgs/arrow-left.svg';
   static const String svgsCart = 'assets/svgs/cart.svg';
   static const String svgsCheck = 'assets/svgs/check.svg';
   static const String svgsCircleAdd = 'assets/svgs/circle-add.svg';

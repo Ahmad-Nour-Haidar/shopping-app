@@ -20,11 +20,11 @@ abstract final class ThemeManager {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(20),
             ),
             backgroundColor: AppColor.primary,
             foregroundColor: AppColor.white,
-            padding: const EdgeInsets.all(0),
+            // padding: const EdgeInsets.all(0),
             elevation: 0.0,
           ),
         ),
