@@ -3,15 +3,12 @@ class Assets {
   Assets._();
 
   static const String fontsManropeBold = 'assets/fonts/Manrope-Bold.ttf';
-  static const String fontsManropeExtraBold =
-      'assets/fonts/Manrope-ExtraBold.ttf';
-  static const String fontsManropeExtraLight =
-      'assets/fonts/Manrope-ExtraLight.ttf';
+  static const String fontsManropeExtraBold = 'assets/fonts/Manrope-ExtraBold.ttf';
+  static const String fontsManropeExtraLight = 'assets/fonts/Manrope-ExtraLight.ttf';
   static const String fontsManropeLight = 'assets/fonts/Manrope-Light.ttf';
   static const String fontsManropeMedium = 'assets/fonts/Manrope-Medium.ttf';
   static const String fontsManropeRegular = 'assets/fonts/Manrope-Regular.ttf';
-  static const String fontsManropeSemiBold =
-      'assets/fonts/Manrope-SemiBold.ttf';
+  static const String fontsManropeSemiBold = 'assets/fonts/Manrope-SemiBold.ttf';
   static const String svgsArrowLeft = 'assets/svgs/arrow-left.svg';
   static const String svgsCart = 'assets/svgs/cart.svg';
   static const String svgsCheck = 'assets/svgs/check.svg';
@@ -22,10 +19,10 @@ class Assets {
   static const String svgsHomeFilled = 'assets/svgs/home-filled.svg';
   static const String svgsHomeOutlined = 'assets/svgs/home-outlined.svg';
   static const String svgsMinus = 'assets/svgs/minus.svg';
-  static const String svgsNounCircleFilled =
-      'assets/svgs/noun-circle-filled.svg';
-  static const String svgsNounCircleOutlined =
-      'assets/svgs/noun-circle-outlined.svg';
+  static const String svgsNounCircleFilled = 'assets/svgs/noun-circle-filled.svg';
+  static const String svgsNounCircleOutlined = 'assets/svgs/noun-circle-outlined.svg';
+  static const String svgsPlusSmall = 'assets/svgs/plus-small.svg';
   static const String svgsSearch = 'assets/svgs/search.svg';
   static const String svgsStarHalf = 'assets/svgs/star-half.svg';
+
 }

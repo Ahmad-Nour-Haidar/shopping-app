@@ -7,6 +7,7 @@ import 'package:ptc_quiz2/core/widgets/svg_image.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:ptc_quiz2/screens/home_screen/widgets/build_offers_list.dart';
 
+import 'widgets/build_recommended_list.dart';
 import 'widgets/build_sliver_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -46,6 +47,7 @@ class HomeScreen extends StatelessWidget {
         slivers: <Widget>[
           buildSliverAppBar(),
           buildOffersList(),
+          buildRecommendedList(),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: 50,

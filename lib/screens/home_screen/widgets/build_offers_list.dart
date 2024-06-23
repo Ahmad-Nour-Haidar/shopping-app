@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../core/constant/app_size.dart';
 import 'offer_widget.dart';
 
 SliverToBoxAdapter buildOffersList() {
-  final pattern = RegExp(r'\d{1,2} % \s*OFF');
-
   final offers = <String>[
     'Get 50 % OFF on first 5 orders',
     'Get 30 % OFF on first 3 orders',
@@ -16,7 +15,7 @@ SliverToBoxAdapter buildOffersList() {
       height: 180,
       // width: 200,
       child: ListView.separated(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(AppSize.screenPadding),
         scrollDirection: Axis.horizontal,
         itemCount: offers.length,
         separatorBuilder: (_, __) => const Gap(12),

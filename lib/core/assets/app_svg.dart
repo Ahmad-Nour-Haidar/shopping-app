@@ -14,4 +14,5 @@ abstract final class AppSvg {
   static const nounCircleOutlined = '$_path/noun-circle-outlined.svg';
   static const search = '$_path/search.svg';
   static const starHalf = '$_path/star-half.svg';
+  static const plusSmall = '$_path/plus-small.svg';
 }
