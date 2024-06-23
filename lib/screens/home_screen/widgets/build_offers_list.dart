@@ -4,14 +4,17 @@ import 'package:gap/gap.dart';
 import '../../../core/constant/app_size.dart';
 import 'offer_widget.dart';
 
-SliverToBoxAdapter buildOffersList() {
-  final offers = <String>[
-    'Get 50 % OFF on first 5 orders',
-    'Get 30 % OFF on first 3 orders',
-    'Get 10 % OFF on first 1 orders',
-  ];
-  return SliverToBoxAdapter(
-    child: SizedBox(
+class BuildOffersList extends StatelessWidget {
+  const BuildOffersList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final offers = <String>[
+      'Get 50 % OFF on first 5 orders',
+      'Get 30 % OFF on first 3 orders',
+      'Get 10 % OFF on first 1 orders',
+    ];
+    return SizedBox(
       height: 180,
       // width: 200,
       child: ListView.separated(
@@ -23,6 +26,6 @@ SliverToBoxAdapter buildOffersList() {
           return OfferWidget(label: offers[index]);
         },
       ),
-    ),
-  );
+    );
+  }
 }

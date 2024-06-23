@@ -4,10 +4,10 @@ import 'package:ptc_quiz2/core/constant/app_size.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 
 import '../data/dummy_data.dart';
-import 'recommended_widget.dart';
+import 'deal_widget.dart';
 
-class BuildRecommendedList extends StatelessWidget {
-  const BuildRecommendedList({super.key});
+class BuildDealsList extends StatelessWidget {
+  const BuildDealsList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,11 @@ class BuildRecommendedList extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: AppSize.screenPadding),
           child: Text(
-            'Recommended',
-            style: AppTextStyle.f30w400darkGrey,
+            'Deals on Fruits & Tea',
+            style: AppTextStyle.f20w700darkGrey,
           ),
         ),
+        // todo Grid View
         SizedBox(
           height: 225,
           child: ListView.separated(
@@ -29,7 +30,7 @@ class BuildRecommendedList extends StatelessWidget {
             itemCount: dealsOnFruitsAndTea.length,
             separatorBuilder: (_, __) => const Gap(12),
             itemBuilder: (_, index) {
-              return RecommendedWidget(product: dealsOnFruitsAndTea[index]);
+              return DealWidget(product: dealsOnFruitsAndTea[index]);
             },
           ),
         ),

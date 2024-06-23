@@ -7,6 +7,7 @@ import 'package:ptc_quiz2/core/widgets/svg_image.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:ptc_quiz2/screens/home_screen/widgets/build_offers_list.dart';
 
+import 'widgets/build_deals_list.dart';
 import 'widgets/build_recommended_list.dart';
 import 'widgets/build_sliver_app_bar.dart';
 
@@ -16,6 +17,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.white,
       appBar: AppBar(
         backgroundColor: AppColor.deepBlue,
         title: const Text(
@@ -46,18 +48,25 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           buildSliverAppBar(),
-          buildOffersList(),
-          buildRecommendedList(),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              childCount: 50,
-              (context, index) {
-                return ListTile(
-                  title: Text(index.toString()),
-                );
-              },
-            ),
+          const SliverToBoxAdapter(
+            child: BuildOffersList(),
           ),
+          const SliverToBoxAdapter(
+            child: BuildRecommendedList(),
+          ),
+          const SliverToBoxAdapter(
+            child: BuildDealsList(),
+          ),
+          // SliverList(
+          //   delegate: SliverChildBuilderDelegate(
+          //     childCount: 50,
+          //     (context, index) {
+          //       return ListTile(
+          //         title: Text(index.toString()),
+          //       );
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );
