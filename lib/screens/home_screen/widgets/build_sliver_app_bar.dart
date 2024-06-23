@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -27,7 +28,7 @@ SliverAppBar buildSliverAppBar() {
     backgroundColor: AppColor.deepBlue,
     // pinned: true,
     floating: true,
-    expandedHeight: 210.0,
+    expandedHeight: 200.0,
     flexibleSpace: FlexibleSpaceBar(
       titlePadding: const EdgeInsets.symmetric(
         horizontal: 20,
@@ -40,6 +41,7 @@ SliverAppBar buildSliverAppBar() {
             TextFormField(
               decoration: const InputDecoration(
                 hintText: 'Search Products or store',
+                contentPadding: EdgeInsets.all(0),
                 hintStyle: AppTextStyle.f14w500lightBlueGrey,
                 prefixIcon: SvgImage(
                   path: AppSvg.search,

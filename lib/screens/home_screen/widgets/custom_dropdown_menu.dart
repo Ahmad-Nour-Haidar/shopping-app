@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:ptc_quiz2/core/extensions/build_context_extensions.dart';
 import 'dart:math' show pi;
 import '../../../core/assets/app_svg.dart';
@@ -37,7 +36,6 @@ class CustomDropdownMenu<T> extends StatelessWidget {
           title,
           style: AppTextStyle.f14w500lightBlueGrey,
         ),
-        const Gap(5),
         LayoutBuilder(
           builder: (context, constraints) {
             return Theme(
@@ -52,10 +50,11 @@ class CustomDropdownMenu<T> extends StatelessWidget {
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 0,
-                    vertical: 0,
-                  ),
+                  contentPadding: EdgeInsets.all(0),
+                  // contentPadding: EdgeInsets.symmetric(
+                  //   horizontal: 0,
+                  //   vertical: 0,
+                  // ),
                 ),
               ),
               child: DropdownMenu(

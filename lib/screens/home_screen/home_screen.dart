@@ -13,6 +13,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pattern = RegExp(r'\d{1,2} % \s*OFF');
+
+    final offers = <String>[
+      'Get 50 % OFF on first 5 orders',
+      'Get 30 % OFF on first 3 orders',
+      'Get 10 % OFF on first 1 orders',
+    ];
+    print(offers.map((e) => e.split(pattern)));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.deepBlue,
