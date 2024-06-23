@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ptc_quiz2/core/assets/app_svg.dart';
 import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/widgets/svg_image.dart';
+import 'package:ptc_quiz2/routers.dart';
 import 'package:ptc_quiz2/screens/splash_screen/data/dummy_data.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -81,7 +83,9 @@ class _SplashScreenState extends State<SplashScreen> {
               CustomButton(
                 size: const Size(250, 70),
                 backgroundColor: AppColor.white,
-                onPressed: () {},
+                onPressed: () {
+                  context.go(AppRouter.homeScreen);
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [

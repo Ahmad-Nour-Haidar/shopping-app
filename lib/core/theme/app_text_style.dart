@@ -32,4 +32,16 @@ abstract final class AppTextStyle {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+
+  static const f14w600white = TextStyle(
+    color: AppColor.white,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const f14w500lightBlueGrey = TextStyle(
+    color: AppColor.lightBlueGrey,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
 }
