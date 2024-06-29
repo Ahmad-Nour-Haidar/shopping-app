@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ptc_quiz2/core/extensions/build_context_extensions.dart';
 import 'dart:math' show pi;
-import '../../../core/assets/app_svg.dart';
-import '../../../core/theme/app_color.dart';
-import '../../../core/theme/app_text_style.dart';
-import '../../../core/widgets/svg_image.dart';
-import '../models/dropdown_menu_entry_model.dart';
+import '../../../../core/assets/app_svg.dart';
+import '../../../../core/theme/app_color.dart';
+import '../../../../core/theme/app_text_style.dart';
+import '../../../../core/utils/values_manager.dart';
+import '../../../../core/widgets/svg_image.dart';
+import '../../models/dropdown_menu_entry_model.dart';
 
 class CustomDropdownMenu<T> extends StatelessWidget {
   const CustomDropdownMenu({
@@ -71,7 +72,7 @@ class CustomDropdownMenu<T> extends StatelessWidget {
                   angle: -pi / 2,
                   child: const SvgImage(
                     path: AppSvg.arrowLeft,
-                    size: 22,
+                    size: AppSize.s22,
                     color: AppColor.lightBlueGrey,
                   ),
                 ),
@@ -79,7 +80,7 @@ class CustomDropdownMenu<T> extends StatelessWidget {
                   angle: pi / 2,
                   child: const SvgImage(
                     path: AppSvg.arrowLeft,
-                    size: 22,
+                    size: AppSize.s22,
                     color: AppColor.lightBlueGrey,
                   ),
                 ),

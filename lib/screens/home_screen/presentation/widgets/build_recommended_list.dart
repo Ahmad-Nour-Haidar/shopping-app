@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:ptc_quiz2/core/constant/app_size.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 
-import '../data/dummy_data.dart';
+import '../../../../core/utils/values_manager.dart';
+import '../../data/dummy_data.dart';
 import 'recommended_widget.dart';
 
 class BuildRecommendedList extends StatelessWidget {
@@ -22,12 +22,12 @@ class BuildRecommendedList extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 225,
+          height: AppSize.s225,
           child: ListView.separated(
             padding: const EdgeInsets.all(AppSize.screenPadding),
             scrollDirection: Axis.horizontal,
             itemCount: dealsOnFruitsAndTea.length,
-            separatorBuilder: (_, __) => const Gap(12),
+            separatorBuilder: (_, __) => const Gap(AppSize.s12),
             itemBuilder: (_, index) {
               return RecommendedWidget(product: dealsOnFruitsAndTea[index]);
             },

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
-import '../../../core/theme/app_text_style.dart';
-import '../model/onboarding_item.dart';
+import '../../../../core/theme/app_text_style.dart';
+import '../../../../core/utils/values_manager.dart';
+import '../../model/onboarding_item.dart';
 
 class OnBoardingWidget extends StatelessWidget {
   const OnBoardingWidget({
@@ -22,12 +23,12 @@ class OnBoardingWidget extends StatelessWidget {
           item.title,
           style: AppTextStyle.f30w700bigFontColor,
         ),
-        const Gap(24),
+        const Gap(AppSize.s24),
         Text(
           item.subTitle,
           style: AppTextStyle.f18w500lightBlueGrey,
         ),
-        const Gap(8),
+        const Gap(AppSize.s8),
       ],
     );
   }

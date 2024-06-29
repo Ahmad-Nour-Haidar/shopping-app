@@ -1,24 +1,31 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'screens/home_screen/home_screen.dart';
-import 'screens/splash_screen/splash_screen.dart';
+import 'screens/home_nav_screen/presentation/screens/home_nav_screen.dart';
+import 'screens/splash_screen/presentation/screens/splash_screen.dart';
 
 // GoRouter configuration
 abstract final class AppRouter {
   static const splashScreen = '/';
-  static const homeScreen = '/homeScreen';
+  static const homeNavScreen = '/homeNavScreen';
+
+  static final Map<String, Widget Function(BuildContext, GoRouterState)>
+      _screens = {
+    splashScreen: (context, state) => const SplashScreen(),
+    homeNavScreen: (context, state) => const HomeNavScreen(),
+  };
 
   static final router = GoRouter(
     initialLocation: splashScreen,
-    routes: <GoRoute>[
-      GoRoute(
-        path: splashScreen,
-        builder: (context, state) => const SplashScreen(),
-      ),
-      GoRoute(
-        path: homeScreen,
-        builder: (context, state) => const HomeScreen(),
-      ),
-    ],
+    routes: _screens.entries.map((entry) {
+      return GoRoute(
+        path: entry.key,
+        name: entry.key,
+        builder: (context, state) {
+          return entry.value(context, state);
+        },
+      );
+    }).toList(),
   );
 }

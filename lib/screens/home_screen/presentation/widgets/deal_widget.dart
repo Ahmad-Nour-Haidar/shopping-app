@@ -5,10 +5,11 @@ import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/widgets/svg_image.dart';
 
-import '../models/product.dart';
+import '../../../../core/utils/values_manager.dart';
+import '../../models/product.dart';
 
-class RecommendedWidget extends StatelessWidget {
-  const RecommendedWidget({
+class DealWidget extends StatelessWidget {
+  const DealWidget({
     super.key,
     required this.product,
   });
@@ -17,13 +18,14 @@ class RecommendedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const height = AppSize.s24;
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(AppPadding.p12),
       // height: 300,
-      width: 130,
+      width: AppSize.s130,
       decoration: BoxDecoration(
         color: AppColor.fontColor,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppSize.s12),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,36 +33,28 @@ class RecommendedWidget extends StatelessWidget {
           const Align(
             child: Icon(
               Icons.image_outlined,
-              size: 55,
+              size: AppSize.s55,
               color: AppColor.lightGrey,
             ),
           ),
-          const Divider(endIndent: 10, indent: 10),
+          Align(
+            alignment: Alignment.centerRight,
+            child: CustomPlusButton(
+              height: height,
+              onTap: () {},
+            ),
+          ),
           Text(
             product.name,
             style: AppTextStyle.f14w600darkBlue,
           ),
           Text(
-            product.category,
+            '\$${product.price}',
+            style: AppTextStyle.f14w600darkBlue,
+          ),
+          Text(
+            '${product.category} ' * 2,
             style: AppTextStyle.f12w600blueGrey,
-          ),
-          Text.rich(
-            TextSpan(
-              children: [
-                const TextSpan(
-                  text: 'Unit ',
-                  style: AppTextStyle.f12w600blueGrey,
-                ),
-                TextSpan(
-                  text: '\$${product.price}',
-                  style: AppTextStyle.f14w600darkBlue,
-                ),
-              ],
-            ),
-          ),
-          BuildCounterButton(
-            count: 10,
-            onTap: () {},
           ),
         ],
       ),
@@ -92,7 +86,7 @@ class CustomPlusButton extends StatelessWidget {
         ),
         child: const SvgImage(
           path: AppSvg.plusSmall,
-          size: 22,
+          size: AppSize.s22,
           color: AppColor.white,
         ),
       ),

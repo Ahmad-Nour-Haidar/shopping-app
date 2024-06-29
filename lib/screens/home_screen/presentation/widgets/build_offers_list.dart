@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../core/constant/app_size.dart';
+import '../../../../core/utils/values_manager.dart';
 import 'offer_widget.dart';
 
 class BuildOffersList extends StatelessWidget {
@@ -15,13 +15,13 @@ class BuildOffersList extends StatelessWidget {
       'Get 10 % OFF on first 1 orders',
     ];
     return SizedBox(
-      height: 180,
+      height: AppSize.s180,
       // width: 200,
       child: ListView.separated(
         padding: const EdgeInsets.all(AppSize.screenPadding),
         scrollDirection: Axis.horizontal,
         itemCount: offers.length,
-        separatorBuilder: (_, __) => const Gap(12),
+        separatorBuilder: (_, __) => const Gap(AppSize.s12),
         itemBuilder: (_, index) {
           return OfferWidget(label: offers[index]);
         },

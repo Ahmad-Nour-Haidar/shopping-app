@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ptc_quiz2/core/utils/values_manager.dart';
 
-import '../../../core/helper/color_helper.dart';
-import '../../../core/theme/app_color.dart';
-import '../../../core/theme/app_text_style.dart';
+import '../../../../core/helper/color_helper.dart';
+import '../../../../core/theme/app_color.dart';
+import '../../../../core/theme/app_text_style.dart';
 
 class OfferWidget extends StatelessWidget {
   const OfferWidget({
@@ -24,17 +25,17 @@ class OfferWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = texts;
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(AppPadding.p8),
       decoration: BoxDecoration(
         color: ColorHelper.randomColor(),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppSize.s16),
       ),
       child: Row(
         children: [
           const Icon(
             Icons.image_outlined,
             color: AppColor.white,
-            size: 60,
+            size: AppSize.s60,
           ),
           Text.rich(
             TextSpan(

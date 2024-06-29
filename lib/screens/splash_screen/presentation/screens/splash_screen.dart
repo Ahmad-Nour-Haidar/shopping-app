@@ -3,13 +3,14 @@ import 'package:go_router/go_router.dart';
 import 'package:ptc_quiz2/core/assets/app_svg.dart';
 import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
+import 'package:ptc_quiz2/core/utils/values_manager.dart';
 import 'package:ptc_quiz2/core/widgets/svg_image.dart';
 import 'package:ptc_quiz2/routers.dart';
 import 'package:ptc_quiz2/screens/splash_screen/data/dummy_data.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../core/widgets/custom_button.dart';
-import 'widgets/on_boarding_widget.dart';
+import '../../../../core/widgets/custom_button.dart';
+import '../widgets/on_boarding_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -27,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: AppColor.deepBlue,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          padding: const EdgeInsets.symmetric(
+              horizontal: AppPadding.p30, vertical: AppPadding.p20),
           child: Column(
             children: [
               Expanded(
@@ -44,7 +46,8 @@ class _SplashScreenState extends State<SplashScreen> {
                           final isEnd = index == pageViewItem.length - 1;
                           return Padding(
                             /// also we should handel if 'ar' - 'en'
-                            padding: EdgeInsets.only(right: isEnd ? 0 : 16),
+                            padding: EdgeInsets.only(
+                                right: isEnd ? AppSize.s0 : AppSize.s16),
                             child: OnBoardingWidget(
                               item: item,
                             ),
@@ -75,16 +78,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Icon(
                   Icons.image_outlined,
                   color: AppColor.white,
-                  size: 150,
+                  size: AppSize.s150,
                 ),
               ),
 
               /// we can use [ElevatedButton.icon]
               CustomButton(
-                size: const Size(250, 70),
+                size: const Size(AppSize.s250, AppSize.s70),
                 backgroundColor: AppColor.white,
                 onPressed: () {
-                  context.go(AppRouter.homeScreen);
+                  context.go(AppRouter.homeNavScreen);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -97,7 +100,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       flipX: true,
                       child: const SvgImage(
                         path: AppSvg.arrowLeft,
-                        size: 28,
+                        size: AppSize.s28,
                         color: AppColor.darkGrey,
                       ),
                     ),
