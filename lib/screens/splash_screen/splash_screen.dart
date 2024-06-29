@@ -84,7 +84,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 size: const Size(250, 70),
                 backgroundColor: AppColor.white,
                 onPressed: () {
-                  context.go(AppRouter.homeScreen);
+                  context.go(AppRouter.homeNavScreen);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
