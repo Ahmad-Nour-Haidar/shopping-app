@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
-import 'package:ptc_quiz2/core/assets/app_svg.dart';
-import 'package:ptc_quiz2/core/data/cart/cart_manager.dart';
-import 'package:ptc_quiz2/core/theme/app_color.dart';
-import 'package:ptc_quiz2/core/theme/app_text_style.dart';
-import 'package:ptc_quiz2/core/utils/values_manager.dart';
-import 'package:ptc_quiz2/core/widgets/svg_image.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/assets/app_svg.dart';
+import '../../../../core/constant/app_keys.dart';
+import '../../../../core/data/cart/cart_manager.dart';
+import '../../../../core/theme/app_color.dart';
+import '../../../../core/theme/app_text_style.dart';
+import '../../../../core/utils/values_manager.dart';
+import '../../../../core/widgets/svg_image.dart';
+import '../../../../routers.dart';
 import '../../models/product.dart';
 
 class RecommendedWidget extends StatelessWidget {
@@ -20,62 +22,70 @@ class RecommendedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(AppPadding.p12),
-      // height: 300,
-      width: AppSize.s130,
-      decoration: BoxDecoration(
-        color: AppColor.fontColor,
-        borderRadius: BorderRadius.circular(AppSize.s12),
+    return InkWell(
+      onTap: () => context.push(
+        AppRouter.productDetailsScreen,
+        extra: {
+          AppKeys.productId: product.id,
+        },
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Align(
-            child: Icon(
-              Icons.image_outlined,
-              size: AppSize.s55,
-              color: AppColor.lightGrey,
+      child: Container(
+        padding: const EdgeInsets.all(AppPadding.p12),
+        // height: 300,
+        width: AppSize.s130,
+        decoration: BoxDecoration(
+          color: AppColor.fontColor,
+          borderRadius: BorderRadius.circular(AppSize.s12),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Align(
+              child: Icon(
+                Icons.image_outlined,
+                size: AppSize.s55,
+                color: AppColor.lightGrey,
+              ),
             ),
-          ),
-          const Divider(endIndent: AppSize.s10, indent: AppSize.s10),
-          Text(
-            product.name,
-            style: AppTextStyle.f14w600darkBlue,
-          ),
-          Text(
-            product.category,
-            style: AppTextStyle.f12w600blueGrey,
-          ),
-          Text.rich(
-            TextSpan(
-              children: [
-                const TextSpan(
-                  text: 'Unit ',
-                  style: AppTextStyle.f12w600blueGrey,
-                ),
-                TextSpan(
-                  text: '\$${product.price}',
-                  style: AppTextStyle.f14w600darkBlue,
-                ),
-              ],
+            const Divider(endIndent: AppSize.s10, indent: AppSize.s10),
+            Text(
+              product.name,
+              style: AppTextStyle.f14w600darkBlue,
             ),
-          ),
-          StatefulBuilder(
-            builder: (BuildContext context,
-                void Function(void Function()) setState) {
-              final amount = CartManager().getAmount(product.id);
-              return BuildCounterButton(
-                count: amount,
-                onTap: () {
-                  setState(() {
-                    CartManager().store(product.id, amount + 1);
-                  });
-                },
-              );
-            },
-          ),
-        ],
+            Text(
+              product.category,
+              style: AppTextStyle.f12w600blueGrey,
+            ),
+            Text.rich(
+              TextSpan(
+                children: [
+                  const TextSpan(
+                    text: 'Unit ',
+                    style: AppTextStyle.f12w600blueGrey,
+                  ),
+                  TextSpan(
+                    text: '\$${product.price}',
+                    style: AppTextStyle.f14w600darkBlue,
+                  ),
+                ],
+              ),
+            ),
+            StatefulBuilder(
+              builder: (BuildContext context,
+                  void Function(void Function()) setState) {
+                final amount = CartManager().getAmount(product.id);
+                return BuildCounterButton(
+                  count: amount,
+                  onTap: () {
+                    setState(() {
+                      CartManager().store(product.id, amount + 1);
+                    });
+                  },
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

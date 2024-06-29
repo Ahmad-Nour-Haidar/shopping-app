@@ -3,6 +3,7 @@ import 'package:ptc_quiz2/core/assets/app_font.dart';
 import 'package:ptc_quiz2/core/helper/color_helper.dart';
 
 import 'app_color.dart';
+import 'app_text_style.dart';
 
 abstract final class ThemeManager {
   static final _border = OutlineInputBorder(
@@ -24,6 +25,9 @@ abstract final class ThemeManager {
           seedColor: AppColor.primary,
         ),
         applyElevationOverlayColor: false,
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: AppTextStyle.f16w600darkGrey,
+        ),
         inputDecorationTheme: InputDecorationTheme(
           fillColor: AppColor.primary,
           filled: true,

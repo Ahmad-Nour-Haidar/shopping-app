@@ -8,6 +8,7 @@ import 'package:ptc_quiz2/screens/Categories/data/models/category_mode.dart';
 import 'package:ptc_quiz2/screens/home_screen/models/product.dart';
 import 'package:ptc_quiz2/screens/home_screen/presentation/widgets/deal_widget.dart';
 
+import '../../../core/widgets/loading.dart';
 import '../../home_screen/data/dummy_data.dart';
 
 /// I always use [Cubit], but this is only for the quiz
@@ -52,11 +53,7 @@ class _ProductsOfCategoryScreenState extends State<ProductsOfCategoryScreen> {
         ),
       ),
       body: _isLoading
-          ? const Center(
-              child: CircularProgressIndicator(
-                strokeCap: StrokeCap.round,
-              ),
-            )
+          ? const CustomLoading()
           : GridView.builder(
               padding: const EdgeInsets.all(AppPadding.screenPadding),
               itemCount: _data.length,
