@@ -21,9 +21,8 @@ class BuildDealsList extends StatelessWidget {
             style: AppTextStyle.f20w700darkGrey,
           ),
         ),
-        // todo Grid View
         SizedBox(
-          height: AppSize.s225,
+          height: AppSize.s250,
           child: ListView.separated(
             padding: const EdgeInsets.all(AppPadding.screenPadding),
             scrollDirection: Axis.horizontal,

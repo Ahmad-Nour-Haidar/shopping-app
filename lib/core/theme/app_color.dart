@@ -2,6 +2,7 @@ import 'dart:ui';
 
 abstract final class AppColor {
   static const transparent = Color(0x00000000);
+  static const black = Color(0xff000000);
   static const red = Color(0xFFFF0000);
   static const darkBlue = Color(0xFF1B262E);
   static const blueGrey = Color(0xFF354349);

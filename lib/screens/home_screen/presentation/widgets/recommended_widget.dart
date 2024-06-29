@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
@@ -48,9 +50,11 @@ class RecommendedWidget extends StatelessWidget {
               ),
             ),
             const Divider(endIndent: AppSize.s10, indent: AppSize.s10),
-            Text(
-              product.name,
-              style: AppTextStyle.f14w600darkBlue,
+            Flexible(
+              child: Text(
+                product.name,
+                style: AppTextStyle.f14w600darkBlue,
+              ),
             ),
             Text(
               product.category,
@@ -70,6 +74,7 @@ class RecommendedWidget extends StatelessWidget {
                 ],
               ),
             ),
+            const Spacer(),
             StatefulBuilder(
               builder: (BuildContext context,
                   void Function(void Function()) setState) {

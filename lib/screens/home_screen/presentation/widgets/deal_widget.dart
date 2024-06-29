@@ -60,9 +60,11 @@ class ProductWidget extends StatelessWidget {
                 );
               },
             ),
-            Text(
-              product.name,
-              style: AppTextStyle.f14w600darkBlue,
+            Flexible(
+              child: Text(
+                product.name,
+                style: AppTextStyle.f14w600darkBlue,
+              ),
             ),
             Text(
               '\$${product.price}',

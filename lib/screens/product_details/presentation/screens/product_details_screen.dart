@@ -1,13 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ptc_quiz2/core/constant/app_keys.dart';
+import 'package:gap/gap.dart';
 import 'package:ptc_quiz2/core/extensions/build_context_extensions.dart';
-import 'package:ptc_quiz2/core/utils/values_manager.dart';
-import 'package:ptc_quiz2/screens/home_screen/data/dummy_data.dart';
-import 'package:ptc_quiz2/screens/home_screen/models/product.dart';
+import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 
+import '../../../../core/constant/app_keys.dart';
 import '../../../../core/theme/app_color.dart';
+import '../../../../core/utils/values_manager.dart';
 import '../../../../core/widgets/loading.dart';
+import '../../../home_screen/data/dummy_data.dart';
+import '../../../home_screen/models/product.dart';
+import '../widgets/details_product.dart';
+import '../widgets/page_view_images.dart';
+import '../widgets/price_product_details.dart';
+import '../widgets/rating_reviews_bar_product.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -43,55 +48,38 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
       body: _product == null
           ? const CustomLoading()
-          : ListView(
-              padding: const EdgeInsets.all(AppPadding.screenPadding),
-              children: const [
-                PageViewImages(),
+          : Column(
+              children: [
+                const PageViewImages(imagesUrl: []),
+                const Gap(16),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColor.lightBlueGrey.withAlpha(50),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(AppSize.s30),
+                        topRight: Radius.circular(AppSize.s30),
+                      ),
+                    ),
+                    child: ListView(
+                      padding: const EdgeInsets.all(
+                        AppPadding.screenPadding,
+                      ),
+                      physics: const BouncingScrollPhysics(),
+                      children: [
+                        const Text(
+                          'Thin Choice Top Orange',
+                          style: AppTextStyle.f20w600black,
+                        ),
+                        PriceProductDetails(product: _product!),
+                        RatingReviewsBarProduct(product: _product!),
+                        DetailsProduct(product: _product!),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
-    );
-  }
-}
-
-class PageViewImages extends StatefulWidget {
-  const PageViewImages({super.key});
-
-  @override
-  State<PageViewImages> createState() => _PageViewImagesState();
-}
-
-class _PageViewImagesState extends State<PageViewImages> {
-  final _pageController = PageController();
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    const length = 3;
-    return SizedBox(
-      height: context.height / 3,
-      child: Column(
-        children: [
-          Expanded(
-            child: PageView.builder(
-              itemCount: 3,
-              itemBuilder: (_, index) {
-                return const Align(
-                  child: Icon(
-                    Icons.image_outlined,
-                    size: AppSize.s55,
-                    color: AppColor.lightGrey,
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
