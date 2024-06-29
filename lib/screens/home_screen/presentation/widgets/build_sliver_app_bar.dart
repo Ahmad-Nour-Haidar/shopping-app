@@ -9,8 +9,8 @@ import '../../../../core/widgets/svg_image.dart';
 import '../../models/dropdown_menu_entry_model.dart';
 import 'custom_dropdown_menu.dart';
 
-class BuildSliverAppBar extends StatelessWidget {
-  const BuildSliverAppBar({super.key});
+class BuildHomeSliverAppBar extends StatelessWidget {
+  const BuildHomeSliverAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class BuildSliverAppBar extends StatelessWidget {
           vertical: AppSize.s10,
         ),
         background: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSize.s20),
+          padding: const EdgeInsets.symmetric(horizontal: AppPadding.p20),
           child: Column(
             children: [
               const Gap(AppSize.s16),

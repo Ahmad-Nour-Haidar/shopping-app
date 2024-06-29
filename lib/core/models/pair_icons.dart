@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show immutable, IconData;
+import 'package:flutter/material.dart' show immutable, IconData, Widget;
 
 @immutable
 final class PairIcons {
@@ -11,4 +11,15 @@ final class PairIcons {
   });
 
   IconData getIcon(bool isActive) => isActive ? filledIcon : outlinedIcon;
+}
+
+@immutable
+final class ScreenWithPairIcons {
+  final PairIcons pairIcons;
+  final Widget screen;
+
+  const ScreenWithPairIcons({
+    required this.pairIcons,
+    required this.screen,
+  });
 }

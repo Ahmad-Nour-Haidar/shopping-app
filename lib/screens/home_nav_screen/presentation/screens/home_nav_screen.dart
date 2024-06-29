@@ -9,6 +9,7 @@ import 'package:badges/badges.dart';
 
 import '../../../../core/models/pair_icons.dart';
 import '../../../../core/utils/values_manager.dart';
+import '../../../Categories/presentation/screens/categories_screen.dart';
 import '../../../home_screen/presentation/screens/home_screen.dart';
 
 class HomeNavScreen extends StatefulWidget {
@@ -20,30 +21,36 @@ class HomeNavScreen extends StatefulWidget {
 
 class _HomeNavScreenState extends State<HomeNavScreen> {
   int _bottomNavIndex = 0;
-  static const _icons = [
-    PairIcons(
-      filledIcon: Icons.home_filled,
-      outlinedIcon: Icons.home_outlined,
-    ),
-    PairIcons(
-      filledIcon: Icons.favorite,
-      outlinedIcon: Icons.favorite_border,
-    ),
-    PairIcons(
-      filledIcon: Icons.category,
-      outlinedIcon: Icons.category_outlined,
-    ),
-    PairIcons(
-      filledIcon: Icons.more_vert,
-      outlinedIcon: Icons.more_vert_outlined,
-    ),
-  ];
 
   static const _screens = [
-    HomeScreen(),
-    SizedBox(),
-    SizedBox(),
-    SizedBox(),
+    ScreenWithPairIcons(
+      pairIcons: PairIcons(
+        filledIcon: Icons.home_filled,
+        outlinedIcon: Icons.home_outlined,
+      ),
+      screen: HomeScreen(),
+    ),
+    ScreenWithPairIcons(
+      pairIcons: PairIcons(
+        filledIcon: Icons.category,
+        outlinedIcon: Icons.category_outlined,
+      ),
+      screen: CategoriesScreen(),
+    ),
+    ScreenWithPairIcons(
+      pairIcons: PairIcons(
+        filledIcon: Icons.favorite,
+        outlinedIcon: Icons.favorite_border,
+      ),
+      screen: SizedBox(),
+    ),
+    ScreenWithPairIcons(
+      pairIcons: PairIcons(
+        filledIcon: Icons.more_vert,
+        outlinedIcon: Icons.more_vert_outlined,
+      ),
+      screen: SizedBox(),
+    ),
   ];
 
   @override
@@ -55,9 +62,9 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
         color: AppColor.lightGrey.withAlpha(50),
         buttonBackgroundColor: AppColor.darkGrey,
         index: _bottomNavIndex,
-        items: List.generate(_icons.length, (index) {
+        items: List.generate(_screens.length, (index) {
           return Icon(
-            _icons[index].getIcon(_bottomNavIndex == index),
+            _screens[index].pairIcons.getIcon(_bottomNavIndex == index),
             size: AppSize.s30,
             color: _bottomNavIndex == index ? AppColor.gold : AppColor.darkGrey,
           );
@@ -98,7 +105,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
           const Gap(AppSize.s24),
         ],
       ),
-      body: _screens[_bottomNavIndex],
+      body: _screens[_bottomNavIndex].screen,
     );
   }
 }

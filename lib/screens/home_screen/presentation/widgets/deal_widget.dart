@@ -5,6 +5,7 @@ import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/widgets/svg_image.dart';
 
+import '../../../../core/data/cart/cart_manager.dart';
 import '../../../../core/utils/values_manager.dart';
 import '../../models/product.dart';
 
@@ -18,7 +19,6 @@ class DealWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const height = AppSize.s24;
     return Container(
       padding: const EdgeInsets.all(AppPadding.p12),
       // height: 300,
@@ -37,12 +37,19 @@ class DealWidget extends StatelessWidget {
               color: AppColor.lightGrey,
             ),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: CustomPlusButton(
-              height: height,
-              onTap: () {},
-            ),
+          StatefulBuilder(
+            builder: (BuildContext context,
+                void Function(void Function()) setState) {
+              final amount = CartManager().getAmount(product.id);
+              return BuildCounterButton(
+                count: amount,
+                onTap: () {
+                  setState(() {
+                    CartManager().store(product.id, amount + 1);
+                  });
+                },
+              );
+            },
           ),
           Text(
             product.name,

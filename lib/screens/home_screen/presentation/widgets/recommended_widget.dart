@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:ptc_quiz2/core/assets/app_svg.dart';
+import 'package:ptc_quiz2/core/data/cart/cart_manager.dart';
 import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/utils/values_manager.dart';
@@ -59,9 +61,19 @@ class RecommendedWidget extends StatelessWidget {
               ],
             ),
           ),
-          BuildCounterButton(
-            count: 10,
-            onTap: () {},
+          StatefulBuilder(
+            builder: (BuildContext context,
+                void Function(void Function()) setState) {
+              final amount = CartManager().getAmount(product.id);
+              return BuildCounterButton(
+                count: amount,
+                onTap: () {
+                  setState(() {
+                    CartManager().store(product.id, amount + 1);
+                  });
+                },
+              );
+            },
           ),
         ],
       ),

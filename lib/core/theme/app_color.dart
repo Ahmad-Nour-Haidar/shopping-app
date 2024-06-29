@@ -20,4 +20,5 @@ abstract final class AppColor {
   static const bigFontColor = Color(0xFFFAFBFD);
   static const lightBlueGrey = Color(0xFFB2BBCE);
   static const darkGrey = Color(0xFF1E222B);
+  static const backgroundCategory = Color(0xffE0E2EE);
 }

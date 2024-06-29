@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomScrollView(
       slivers: <Widget>[
-        BuildSliverAppBar(),
+        BuildHomeSliverAppBar(),
         SliverToBoxAdapter(
           child: BuildOffersList(),
         ),
@@ -22,16 +22,6 @@ class HomeScreen extends StatelessWidget {
         SliverToBoxAdapter(
           child: BuildDealsList(),
         ),
-        // SliverList(
-        //   delegate: SliverChildBuilderDelegate(
-        //     childCount: 50,
-        //     (context, index) {
-        //       return ListTile(
-        //         title: Text(index.toString()),
-        //       );
-        //     },
-        //   ),
-        // ),
       ],
     );
   }
