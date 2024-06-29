@@ -25,7 +25,7 @@ class OnBoardingWidget extends StatelessWidget {
         ),
         const Gap(AppSize.s24),
         Text(
-          item.subTitle * 10,
+          item.subTitle,
           style: AppTextStyle.f18w500lightBlueGrey,
         ),
         const Gap(AppSize.s8),
