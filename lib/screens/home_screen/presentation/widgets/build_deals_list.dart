@@ -15,7 +15,7 @@ class BuildDealsList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSize.screenPadding),
+          padding: EdgeInsets.symmetric(horizontal: AppPadding.screenPadding),
           child: Text(
             'Deals on Fruits & Tea',
             style: AppTextStyle.f20w700darkGrey,
@@ -25,12 +25,12 @@ class BuildDealsList extends StatelessWidget {
         SizedBox(
           height: AppSize.s225,
           child: ListView.separated(
-            padding: const EdgeInsets.all(AppSize.screenPadding),
+            padding: const EdgeInsets.all(AppPadding.screenPadding),
             scrollDirection: Axis.horizontal,
-            itemCount: dealsOnFruitsAndTea.length,
+            itemCount: products.length,
             separatorBuilder: (_, __) => const Gap(AppSize.s12),
             itemBuilder: (_, index) {
-              return DealWidget(product: dealsOnFruitsAndTea[index]);
+              return ProductWidget(product: products[index]);
             },
           ),
         ),

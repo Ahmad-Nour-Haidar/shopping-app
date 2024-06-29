@@ -9,19 +9,18 @@ import '../../../../core/data/cart/cart_manager.dart';
 import '../../../../core/utils/values_manager.dart';
 import '../../models/product.dart';
 
-class DealWidget extends StatelessWidget {
-  const DealWidget({
+class ProductWidget extends StatelessWidget {
+  const ProductWidget({
     super.key,
     required this.product,
   });
 
-  final Product product;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(AppPadding.p12),
-      // height: 300,
       width: AppSize.s130,
       decoration: BoxDecoration(
         color: AppColor.fontColor,

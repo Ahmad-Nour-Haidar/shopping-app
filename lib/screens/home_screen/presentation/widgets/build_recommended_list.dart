@@ -15,7 +15,7 @@ class BuildRecommendedList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSize.screenPadding),
+          padding: EdgeInsets.symmetric(horizontal: AppPadding.screenPadding),
           child: Text(
             'Recommended',
             style: AppTextStyle.f30w400darkGrey,
@@ -24,12 +24,12 @@ class BuildRecommendedList extends StatelessWidget {
         SizedBox(
           height: AppSize.s225,
           child: ListView.separated(
-            padding: const EdgeInsets.all(AppSize.screenPadding),
+            padding: const EdgeInsets.all(AppPadding.screenPadding),
             scrollDirection: Axis.horizontal,
-            itemCount: dealsOnFruitsAndTea.length,
+            itemCount: products.length,
             separatorBuilder: (_, __) => const Gap(AppSize.s12),
             itemBuilder: (_, index) {
-              return RecommendedWidget(product: dealsOnFruitsAndTea[index]);
+              return RecommendedWidget(product: products[index]);
             },
           ),
         ),

@@ -20,6 +20,7 @@ abstract final class AppMargin {
 }
 
 abstract final class AppPadding {
+  static const screenPadding = 20.0;
   static const p0 = 0.0;
   static const p2 = 2.0;
   static const p4 = 4.0;
@@ -43,7 +44,6 @@ abstract final class AppPadding {
 }
 
 abstract final class AppSize {
-  static const screenPadding = 20.0;
   static const s0 = 0.0;
   static const s1_5 = 1.5;
   static const s4 = 4.0;

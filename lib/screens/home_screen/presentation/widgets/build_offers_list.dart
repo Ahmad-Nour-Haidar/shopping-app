@@ -18,7 +18,7 @@ class BuildOffersList extends StatelessWidget {
       height: AppSize.s180,
       // width: 200,
       child: ListView.separated(
-        padding: const EdgeInsets.all(AppSize.screenPadding),
+        padding: const EdgeInsets.all(AppPadding.screenPadding),
         scrollDirection: Axis.horizontal,
         itemCount: offers.length,
         separatorBuilder: (_, __) => const Gap(AppSize.s12),

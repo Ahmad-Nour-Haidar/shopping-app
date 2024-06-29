@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
-class Product {
+class ProductModel {
   final String id;
   final String categoryId;
   final String name;
@@ -9,7 +9,7 @@ class Product {
   final double price;
   final String image;
 
-  const Product({
+  const ProductModel({
     required this.id,
     required this.categoryId,
     required this.name,
