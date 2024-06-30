@@ -15,4 +15,6 @@ abstract final class AppSvg {
   static const search = '$_path/search.svg';
   static const starHalf = '$_path/star-half.svg';
   static const plusSmall = '$_path/plus-small.svg';
+  static const hash = '$_path/hash.svg';
+  static const blackLine = '$_path/black-line.svg';
 }

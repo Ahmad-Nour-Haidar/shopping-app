@@ -1,5 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart' hide Badge;
+import 'package:go_router/go_router.dart';
+import 'package:ptc_quiz2/routers.dart';
 
 import '../assets/app_svg.dart';
 import '../data/cart/cart_manager.dart';
@@ -11,7 +13,7 @@ import 'svg_image.dart';
 class BadgeCartIcon extends StatelessWidget {
   const BadgeCartIcon({
     super.key,
-   this.cartIconColor = AppColor.white,
+    this.cartIconColor = AppColor.white,
   });
 
   final Color cartIconColor;
@@ -19,6 +21,7 @@ class BadgeCartIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Badge(
+      onTap: () => context.push(AppRouter.cartScreen),
       badgeStyle: BadgeStyle(
         shape: BadgeShape.circle,
         badgeColor: AppColor.gold,

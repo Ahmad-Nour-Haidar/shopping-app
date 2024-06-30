@@ -50,6 +50,9 @@ class ProductWidget extends StatelessWidget {
               builder: (BuildContext context,
                   void Function(void Function()) setState) {
                 final amount = CartManager().getAmount(product.id);
+
+                /// amount maybe changed from cart screen
+                /// so I will fix it in real quiz ...!
                 return BuildCounterButton(
                   count: amount,
                   onTap: () {

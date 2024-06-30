@@ -1,12 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:gap/gap.dart';
-import 'package:ptc_quiz2/core/assets/app_svg.dart';
-import 'package:ptc_quiz2/core/data/cart/cart_manager.dart';
 import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
-import 'package:ptc_quiz2/core/widgets/svg_image.dart';
-import 'package:badges/badges.dart';
 
 import '../../../../core/models/pair_icons.dart';
 import '../../../../core/utils/values_manager.dart';
