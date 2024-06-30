@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart' show immutable;
+import 'package:ptc_quiz2/core/helper/ID_helper.dart';
 
 @immutable
 class ProductModel {
@@ -15,8 +16,7 @@ class ProductModel {
   final String details;
   final String nutritionalFacts;
 
-  const ProductModel({
-    required this.id,
+  ProductModel({
     required this.categoryId,
     required this.name,
     required this.category,
@@ -28,7 +28,7 @@ class ProductModel {
     required this.countReviews,
     required this.details,
     required this.nutritionalFacts,
-  });
+  }) : id = IDHelper.idV1;
 
   double get priceAfterDiscount => price - (discount * price / 100);
 }

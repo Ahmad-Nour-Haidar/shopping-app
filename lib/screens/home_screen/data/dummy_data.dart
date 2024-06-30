@@ -11,7 +11,6 @@ final List<ProductModel> products = List.generate(
   (index) {
     final category = IDHelper.randomCategory;
     return ProductModel(
-      id: IDHelper.idV1,
       categoryId: category.id,
       name: faker.food.dish(),
       category: category.name,
