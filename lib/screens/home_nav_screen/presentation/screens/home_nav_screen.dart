@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:gap/gap.dart';
 import 'package:ptc_quiz2/core/assets/app_svg.dart';
+import 'package:ptc_quiz2/core/data/cart/cart_manager.dart';
 import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/widgets/svg_image.dart';
@@ -9,6 +10,7 @@ import 'package:badges/badges.dart';
 
 import '../../../../core/models/pair_icons.dart';
 import '../../../../core/utils/values_manager.dart';
+import '../../../../core/widgets/badge_cart_icon.dart';
 import '../../../Categories/presentation/screens/categories_screen.dart';
 import '../../../home_screen/presentation/screens/home_screen.dart';
 
@@ -79,30 +81,11 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
         backgroundColor: AppColor.deepBlue,
         title: const Text(
           'Hay, Ahmad',
-          style: AppTextStyle.f22w600fontColor,
+          style: AppTextStyle.f20w500bigFontColor,
         ),
-        actions: [
-          Badge(
-            badgeStyle: BadgeStyle(
-              shape: BadgeShape.circle,
-              badgeColor: AppColor.gold,
-              borderRadius: BorderRadius.circular(AppSize.s10),
-            ),
-            badgeContent: const Text(
-              '3',
-              style: AppTextStyle.f14w600white,
-            ),
-            position: BadgePosition.custom(
-              top: -AppSize.s15,
-              end: -AppSize.s15,
-            ),
-            child: const SvgImage(
-              path: AppSvg.cart,
-              size: AppSize.s18,
-              color: AppColor.white,
-            ),
-          ),
-          const Gap(AppSize.s24),
+        actions: const [
+          BadgeCartIcon(),
+          Gap(AppSize.s24),
         ],
       ),
       body: _screens[_bottomNavIndex].screen,
