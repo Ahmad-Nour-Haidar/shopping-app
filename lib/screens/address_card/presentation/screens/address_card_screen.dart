@@ -11,6 +11,7 @@ import 'package:ptc_quiz2/screens/address_card/data/dummy_data.dart';
 
 import '../../../../core/widgets/custom_button.dart';
 import '../../data/models/address_model.dart';
+import '../widgets/address_card_widget.dart';
 
 class AddressCardScreen extends StatefulWidget {
   const AddressCardScreen({super.key});
@@ -76,61 +77,19 @@ class _AddressCardScreenState extends State<AddressCardScreen> {
                   itemBuilder: (_, index) {
                     final item = _addresses[index];
                     final isSelected = item.id == _selectedId;
-                    return Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppPadding.p12,
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(AppSize.s12),
-                        border: Border.all(
-                          width: 3,
-                          color: isSelected
-                              ? AppColor.gold
-                              : AppColor.lightBlueGrey,
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                item.title,
-                                style: AppTextStyle.f16w600darkGrey,
-                              ),
-                              Checkbox(
-                                value: isSelected,
-                                checkColor: AppColor.black,
-                                activeColor: AppColor.gold,
-                                shape: const CircleBorder(),
-                                onChanged: (value) {
-                                  setState(() {
-                                    if (_selectedId == item.id) {
-                                      // un select
-                                      _selectedId = '';
-                                    } else {
-                                      _selectedId = item.id;
-                                    }
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                item.street,
-                                style: AppTextStyle.f16w400darkGrey,
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                child: const Text('Edit'),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                    return AddressCardWidget(
+                      model: item,
+                      onTap: (value) {
+                        setState(() {
+                          if (_selectedId == item.id) {
+                            // un select
+                            _selectedId = '';
+                          } else {
+                            _selectedId = item.id;
+                          }
+                        });
+                      },
+                      isSelected: isSelected,
                     );
                   },
                 ),
