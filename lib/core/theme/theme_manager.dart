@@ -17,37 +17,46 @@ abstract final class ThemeManager {
   );
 
   static ThemeData get light => ThemeData(
-        useMaterial3: true,
-        fontFamily: AppFont.manrope,
-        primaryColor: AppColor.primary,
-        primarySwatch: ColorHelper.toMaterialColor(AppColor.primary),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColor.primary,
-        ),
-        applyElevationOverlayColor: false,
-        appBarTheme: const AppBarTheme(
-          titleTextStyle: AppTextStyle.f16w600darkGrey,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          fillColor: AppColor.primary,
-          filled: true,
-          border: _border,
-          disabledBorder: _border,
-          enabledBorder: _border,
-          focusedBorder: _border,
-          focusedErrorBorder: _errorBorder,
-          errorBorder: _errorBorder,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            backgroundColor: AppColor.primary,
-            foregroundColor: AppColor.white,
-            // padding: const EdgeInsets.all(0),
-            elevation: 0.0,
+      useMaterial3: true,
+      fontFamily: AppFont.manrope,
+      primaryColor: AppColor.primary,
+      primarySwatch: ColorHelper.toMaterialColor(AppColor.primary),
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColor.primary,
+      ),
+      applyElevationOverlayColor: false,
+      appBarTheme: const AppBarTheme(
+        scrolledUnderElevation: 0.0,
+        titleTextStyle: AppTextStyle.f16w600darkGrey,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: AppColor.primary,
+        filled: true,
+        border: _border,
+        disabledBorder: _border,
+        enabledBorder: _border,
+        focusedBorder: _border,
+        focusedErrorBorder: _errorBorder,
+        errorBorder: _errorBorder,
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
+          backgroundColor: AppColor.primary,
+          foregroundColor: AppColor.white,
+          // padding: const EdgeInsets.all(0),
+          elevation: 0.0,
         ),
-      );
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: const BorderSide(width: 10)
+          ),
+          elevation: 0.0,
+        ),
+      ));
 }

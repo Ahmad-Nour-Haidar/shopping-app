@@ -39,7 +39,7 @@ class RatingReviewsBarProduct extends StatelessWidget {
           ),
           const Gap(AppSize.s16),
           Text(
-            '${product.reviews} Reviews',
+            '${product.countReviews} Reviews',
             style: AppTextStyle.f18w500lightBlueGrey,
           )
         ],

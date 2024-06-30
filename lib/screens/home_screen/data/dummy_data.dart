@@ -19,7 +19,8 @@ final List<ProductModel> products = List.generate(
       rating: NumberHelper.randomDouble(1, 5),
       image: '',
       discount: NumberHelper.randomInt(5, 25).toDouble(),
-      reviews: NumberHelper.randomInt(),
+      countReviews: NumberHelper.randomInt(),
+      reviews: faker.lorem.words(30).join(' '),
       details: faker.lorem.words(30).join(' '),
       nutritionalFacts: faker.lorem.words(30).join(' '),
     );

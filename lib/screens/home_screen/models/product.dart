@@ -10,7 +10,8 @@ class ProductModel {
   final double discount;
   final double rating;
   final String image;
-  final int reviews;
+  final int countReviews;
+  final String reviews;
   final String details;
   final String nutritionalFacts;
 
@@ -24,6 +25,7 @@ class ProductModel {
     required this.discount,
     required this.rating,
     required this.reviews,
+    required this.countReviews,
     required this.details,
     required this.nutritionalFacts,
   });
