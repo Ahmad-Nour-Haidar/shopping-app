@@ -8,6 +8,7 @@ import 'package:ptc_quiz2/screens/Categories/data/models/category_mode.dart';
 import 'package:ptc_quiz2/screens/home_screen/models/product.dart';
 import 'package:ptc_quiz2/screens/home_screen/presentation/widgets/deal_widget.dart';
 
+import '../../../core/widgets/custom_arrow_button.dart';
 import '../../../core/widgets/loading.dart';
 import '../../home_screen/data/dummy_data.dart';
 
@@ -47,6 +48,7 @@ class _ProductsOfCategoryScreenState extends State<ProductsOfCategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const CustomArrowButton(),
         title: Text(
           _category?.name ?? '',
           style: AppTextStyle.f16w600darkGrey,

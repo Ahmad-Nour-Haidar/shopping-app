@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/utils/values_manager.dart';
+import '../../../../core/widgets/custom_arrow_button.dart';
 import '../../../../core/widgets/loading.dart';
 import '../../data/dummy_data.dart';
 import '../../data/model/order_model.dart';
@@ -34,6 +35,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
     setState(() => _loading = true);
     _orders.addAll(orders);
     _filter(_currentStatus);
+    await Future.delayed(const Duration(seconds: 3));
     setState(() => _loading = false);
   }
 
@@ -48,6 +50,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const CustomArrowButton(),
         title: const Text('Orders'),
       ),
       body: _loading

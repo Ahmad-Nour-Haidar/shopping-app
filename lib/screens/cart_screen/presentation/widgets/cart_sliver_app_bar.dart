@@ -5,6 +5,7 @@ import '../../../../core/assets/app_svg.dart';
 import '../../../../core/theme/app_color.dart';
 import '../../../../core/theme/app_text_style.dart';
 import '../../../../core/utils/values_manager.dart';
+import '../../../../core/widgets/custom_arrow_button.dart';
 import '../../../../core/widgets/svg_image.dart';
 
 class CartSliverAppBar extends StatelessWidget {
@@ -22,7 +23,10 @@ class CartSliverAppBar extends StatelessWidget {
       pinned: true,
       floating: false,
       expandedHeight: AppSize.s250,
-      // automaticallyImplyLeading: false,
+      leading: const CustomArrowButton(
+        backgroundColor: AppColor.white,
+        size: Size(40, 40),
+      ),
       bottom: PreferredSize(
         preferredSize: Size(context.width, 55),
         child: Container(

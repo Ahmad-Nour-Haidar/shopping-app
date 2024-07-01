@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/data/cart/cart_manager.dart';
+import '../../../../routers.dart';
 import '../../../home_screen/data/dummy_data.dart';
 import '../../../home_screen/models/product.dart';
 import '../widgets/cart_sliver_app_bar.dart';
@@ -64,8 +66,11 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
-          const PriceDetailsCart(
+          PriceDetailsCart(
             buttonTitle: 'Proceed  To checkout',
+            onTap: () {
+              context.push(AppRouter.addressCardScreen);
+            },
           ),
         ],
       ),

@@ -1,14 +1,14 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:go_router/go_router.dart';
-import 'package:ptc_quiz2/routers.dart';
 
+import '../../routers.dart';
 import '../assets/app_svg.dart';
 import '../data/cart/cart_manager.dart';
 import '../theme/app_color.dart';
 import '../theme/app_text_style.dart';
 import '../utils/values_manager.dart';
-import 'svg_image.dart';
+import 'custom_svg_icon_button.dart';
 
 class BadgeCartIcon extends StatelessWidget {
   const BadgeCartIcon({
@@ -37,13 +37,14 @@ class BadgeCartIcon extends StatelessWidget {
         },
       ),
       position: BadgePosition.custom(
-        top: -AppSize.s15,
-        end: -AppSize.s15,
+        // top: -AppSize.s15,
+        end: -AppSize.s10,
       ),
-      child: SvgImage(
+      child: CustomIconButton(
         path: AppSvg.cart,
-        size: AppSize.s18,
+        // size: AppSize.s18,
         color: cartIconColor,
+        onTap: () => context.push(AppRouter.cartScreen),
       ),
     );
   }

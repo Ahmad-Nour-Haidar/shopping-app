@@ -15,9 +15,11 @@ class PriceDetailsCart extends StatelessWidget {
   const PriceDetailsCart({
     super.key,
     required this.buttonTitle,
+    required this.onTap,
   });
 
   final String buttonTitle;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +51,7 @@ class PriceDetailsCart extends StatelessWidget {
               ),
               const Gap(16),
               CustomButton(
-                onPressed: () {
-                  context.push(AppRouter.addressCardScreen);
-                },
+                onPressed: onTap,
                 size: Size(context.width * .8, 56),
                 child: Text(
                   buttonTitle,

@@ -7,6 +7,7 @@ import '../../../../core/theme/app_color.dart';
 import '../../../../core/theme/app_text_style.dart';
 import '../../../../core/utils/values_manager.dart';
 import '../../../../core/widgets/badge_cart_icon.dart';
+import '../../../../core/widgets/custom_arrow_button.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/loading.dart';
 import '../../../home_screen/data/dummy_data.dart';
@@ -47,6 +48,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const CustomArrowButton(),
         title: Text(_product?.name ?? ''),
         actions: const [
           BadgeCartIcon(
