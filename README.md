@@ -12,7 +12,6 @@ onboarding screens.
 - [✨ Features](#-features)
 - [📱 App Preview](#-app-preview)
 - [🎥 Demo Video](#-demo-video)
-- [🚀 Usage](#-usage)
 - [⚙️ Installation](#-installation)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
@@ -63,20 +62,18 @@ onboarding screens.
 
 ## 🎥 Demo Video
 
-![🎥 Demo Video](./app-preview/myrecording.mp4)
-
-## 🚀 Usage
+[![🎥 Demo Video](./app-preview/myrecording.mp4)
 
 ## ⚙️ Installation
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/Ahmad-Nour-Haidar/ptc-modeling-in-dart.git
+    git clone https://github.com/Ahmad-Nour-Haidar/shopping-app.git
     ```
 
 2. **Navigate to the project directory**:
     ```bash
-    cd ptc-modeling-in-dart
+    cd shopping-app
     ```
 
 3. **Install dependencies**:
