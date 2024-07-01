@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../core/assets/app_svg.dart';
 import '../../../../core/theme/app_color.dart';
-import '../../../../core/theme/app_text_style.dart';
 import '../../../../core/utils/values_manager.dart';
-import '../../../../core/widgets/svg_image.dart';
 import '../../models/dropdown_menu_entry_model.dart';
 import 'custom_dropdown_menu.dart';
+import 'custom_search_text_form_field.dart';
 
 class BuildHomeSliverAppBar extends StatelessWidget {
   const BuildHomeSliverAppBar({super.key});
@@ -43,18 +41,7 @@ class BuildHomeSliverAppBar extends StatelessWidget {
           child: Column(
             children: [
               const Gap(AppSize.s16),
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Search Products or store',
-                  contentPadding: EdgeInsets.all(AppPadding.p0),
-                  hintStyle: AppTextStyle.f14w500lightBlueGrey,
-                  prefixIcon: SvgImage(
-                    path: AppSvg.search,
-                    size: AppSize.s18,
-                    color: AppColor.white,
-                  ),
-                ),
-              ),
+              const CustomSearchTextFormField(),
               const Gap(AppSize.s16),
               Row(
                 children: [

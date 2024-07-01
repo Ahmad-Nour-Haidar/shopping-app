@@ -12,7 +12,12 @@ import '../../../../core/widgets/custom_button.dart';
 import 'row_price.dart';
 
 class PriceDetailsCart extends StatelessWidget {
-  const PriceDetailsCart({super.key});
+  const PriceDetailsCart({
+    super.key,
+    required this.buttonTitle,
+  });
+
+  final String buttonTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +53,8 @@ class PriceDetailsCart extends StatelessWidget {
                   context.push(AppRouter.addressCardScreen);
                 },
                 size: Size(context.width * .8, 56),
-                child: const Text(
-                  'Proceed  To checkout',
+                child: Text(
+                  buttonTitle,
                   style: AppTextStyle.f16w600white,
                 ),
               ),

@@ -64,7 +64,9 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
-          const PriceDetailsCart(),
+          const PriceDetailsCart(
+            buttonTitle: 'Proceed  To checkout',
+          ),
         ],
       ),
     );

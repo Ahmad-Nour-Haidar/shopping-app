@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ptc_quiz2/core/assets/app_svg.dart';
 import 'package:ptc_quiz2/core/data/cart/cart_manager.dart';
 import 'package:ptc_quiz2/core/extensions/build_context_extensions.dart';
@@ -7,6 +8,7 @@ import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
 import 'package:ptc_quiz2/core/utils/values_manager.dart';
 import 'package:ptc_quiz2/core/widgets/custom_svg_icon_button.dart';
+import 'package:ptc_quiz2/routers.dart';
 import 'package:ptc_quiz2/screens/address_card/data/dummy_data.dart';
 
 import '../../../../core/widgets/custom_button.dart';
@@ -98,7 +100,9 @@ class _AddressCardScreenState extends State<AddressCardScreen> {
             const Gap(16),
             Align(
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(AppRouter.addCardPayment);
+                },
                 size: Size(context.width * .8, 56),
                 child: const Text(
                   'Add Card',

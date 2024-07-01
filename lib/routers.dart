@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ptc_quiz2/screens/CardPayment/presentation/screens/add_card_payment.dart';
 
 import 'screens/address_card/presentation/screens/address_card_screen.dart';
+import 'screens/card_payment/presentation/screens/add_card_payment.dart';
 import 'screens/cart_screen/presentation/screens/cart_screen.dart';
 import 'screens/home_nav_screen/presentation/screens/home_nav_screen.dart';
 import 'screens/product_details/presentation/screens/product_details_screen.dart';
 import 'screens/products_of_category/presentation/products_of_category_screen.dart';
 import 'screens/splash_screen/presentation/screens/splash_screen.dart';
 
-// GoRouter configuration
+/// GoRouter configuration
 abstract final class AppRouter {
   static const splashScreen = '/';
   static const homeNavScreen = '/homeNavScreen';
@@ -28,7 +28,7 @@ abstract final class AppRouter {
     productDetailsScreen: (_, __) => const ProductDetailsScreen(),
     cartScreen: (_, __) => const CartScreen(),
     addressCardScreen: (_, __) => const AddressCardScreen(),
-    addCardPayment: (_, __) => const AddCardPayment(),
+    addCardPayment: (_, __) => const AddCardPaymentScreen(),
   };
 
   static final router = GoRouter(

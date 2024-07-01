@@ -6,14 +6,16 @@ import 'app_color.dart';
 import 'app_text_style.dart';
 
 abstract final class ThemeManager {
-  static final _border = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(28),
-    borderSide: const BorderSide(color: AppColor.primary, width: 2),
+  static const _border = UnderlineInputBorder(
+    borderSide: BorderSide(
+      color: AppColor.grey,
+    ),
   );
 
-  static final _errorBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(28),
-    borderSide: const BorderSide(color: AppColor.red, width: 2),
+  static const _errorBorder = UnderlineInputBorder(
+    borderSide: BorderSide(
+      color: AppColor.red,
+    ),
   );
 
   static ThemeData get light => ThemeData(
@@ -29,8 +31,8 @@ abstract final class ThemeManager {
         scrolledUnderElevation: 0.0,
         titleTextStyle: AppTextStyle.f16w600darkGrey,
       ),
-      inputDecorationTheme: InputDecorationTheme(
-        fillColor: AppColor.primary,
+      inputDecorationTheme: const InputDecorationTheme(
+        fillColor: AppColor.transparent,
         filled: true,
         border: _border,
         disabledBorder: _border,
@@ -53,9 +55,8 @@ abstract final class ThemeManager {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-            side: const BorderSide(width: 10)
-          ),
+              borderRadius: BorderRadius.circular(20),
+              side: const BorderSide(width: 10)),
           elevation: 0.0,
         ),
       ));
