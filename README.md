@@ -62,7 +62,7 @@ onboarding screens.
 
 ## 🎥 Demo Video
 
-![](./app-preview/myrecording.mp4)
+![Demo Video](./app-preview/myrecording.gif)
 
 ## ⚙️ Installation
 
