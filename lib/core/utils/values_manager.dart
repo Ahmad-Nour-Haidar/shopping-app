@@ -66,6 +66,7 @@ abstract final class AppSize {
   static const s36 = 36.0;
   static const s38 = 38.0;
   static const s40 = 40.0;
+  static const s44 = 44.0;
   static const s50 = 50.0;
   static const s55 = 55.0;
   static const s56 = 56.0;
@@ -76,6 +77,7 @@ abstract final class AppSize {
   static const s130 = 130.0;
   static const s150 = 150.0;
   static const s160 = 160.0;
+  static const s170 = 170.0;
   static const s180 = 180.0;
   static const s225 = 225.0;
   static const s250 = 250.0;

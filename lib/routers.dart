@@ -6,6 +6,7 @@ import 'screens/address_card/presentation/screens/address_card_screen.dart';
 import 'screens/card_payment/presentation/screens/add_card_payment.dart';
 import 'screens/cart_screen/presentation/screens/cart_screen.dart';
 import 'screens/home_nav_screen/presentation/screens/home_nav_screen.dart';
+import 'screens/orders/presentation/screens/orders_screen.dart';
 import 'screens/product_details/presentation/screens/product_details_screen.dart';
 import 'screens/products_of_category/presentation/products_of_category_screen.dart';
 import 'screens/splash_screen/presentation/screens/splash_screen.dart';
@@ -19,6 +20,7 @@ abstract final class AppRouter {
   static const cartScreen = '/cartScreen';
   static const addressCardScreen = '/addressCardScreen';
   static const addCardPayment = '/addCardPayment';
+  static const ordersScreen = '/ordersScreen';
 
   static final Map<String, Widget Function(BuildContext, GoRouterState)>
       _screens = {
@@ -29,6 +31,7 @@ abstract final class AppRouter {
     cartScreen: (_, __) => const CartScreen(),
     addressCardScreen: (_, __) => const AddressCardScreen(),
     addCardPayment: (_, __) => const AddCardPaymentScreen(),
+    ordersScreen: (_, __) => const OrdersScreen(),
   };
 
   static final router = GoRouter(

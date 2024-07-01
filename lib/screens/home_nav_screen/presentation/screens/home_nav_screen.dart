@@ -1,9 +1,13 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ptc_quiz2/core/theme/app_color.dart';
 import 'package:ptc_quiz2/core/theme/app_text_style.dart';
+import 'package:ptc_quiz2/core/widgets/custom_svg_icon_button.dart';
+import 'package:ptc_quiz2/routers.dart';
 
+import '../../../../core/assets/app_svg.dart';
 import '../../../../core/models/pair_icons.dart';
 import '../../../../core/utils/values_manager.dart';
 import '../../../../core/widgets/badge_cart_icon.dart';
@@ -79,9 +83,16 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
           'Hay, Ahmad',
           style: AppTextStyle.f20w500bigFontColor,
         ),
-        actions: const [
-          BadgeCartIcon(),
-          Gap(AppSize.s24),
+        actions: [
+          CustomIconButton(
+            path: AppSvg.order,
+            color: AppColor.white,
+            onTap: () {
+              context.push(AppRouter.ordersScreen);
+            },
+          ),
+          const BadgeCartIcon(),
+          const Gap(AppSize.s24),
         ],
       ),
       body: _screens[_bottomNavIndex].screen,

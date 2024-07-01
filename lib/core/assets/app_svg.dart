@@ -16,5 +16,6 @@ abstract final class AppSvg {
   static const starHalf = '$_path/star-half.svg';
   static const plusSmall = '$_path/plus-small.svg';
   static const hash = '$_path/hash.svg';
+  static const order = '$_path/order.svg';
   static const blackLine = '$_path/black-line.svg';
 }
