@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ptc_quiz2/core/extensions/build_context_extensions.dart';
-import 'package:ptc_quiz2/routers.dart';
 
 import '../../../../core/data/cart/cart_manager.dart';
 import '../../../../core/theme/app_color.dart';
