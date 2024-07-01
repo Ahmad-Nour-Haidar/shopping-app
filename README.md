@@ -11,6 +11,7 @@ onboarding screens.
 
 - [✨ Features](#-features)
 - [📱 App Preview](#-app-preview)
+- [🎥 Demo Video](#-demo-video)
 - [🚀 Usage](#-usage)
 - [⚙️ Installation](#-installation)
 - [🤝 Contributing](#-contributing)
@@ -59,6 +60,10 @@ onboarding screens.
 <img src="app-preview/019.png" alt="" height="400" width="200">
 
 </div>
+
+## 🎥 Demo Video
+
+[Demo Video](./app-preview/myrecording.mp4)
 
 ## 🚀 Usage
 
